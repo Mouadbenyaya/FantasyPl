@@ -740,8 +740,9 @@ footer {
     }
 
     header .container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     nav ul {
@@ -759,6 +760,94 @@ footer {
 
     .contact-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* === MENU BURGER (CSS ONLY) === */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin-left: auto;
+    z-index: 1001;
+}
+
+.hamburger span {
+    font-size: 2rem;
+    color: var(--text-light);
+    transition: var(--transition);
+    display: block;
+}
+
+.hamburger .close {
+    display: none;
+}
+
+#menu-toggle:checked~.hamburger .open {
+    display: none;
+}
+
+#menu-toggle:checked~.hamburger .close {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide Menu by Default on Mobile */
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(56, 0, 60, 0.98);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0;
+        /* Reset default margin */
+    }
+
+    /* Show Menu When Checkbox is Checked */
+    #menu-toggle:checked~nav {
+        display: block;
+        animation: slideDown 0.3s ease forwards;
+    }
+
+    /* Animation Keyframes */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    nav li {
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 }
 
@@ -798,6 +887,7 @@ footer {
         left: 30%;
         right: 30%;
     }
+
 
     .hero h2 {
         font-size: 1.8rem;

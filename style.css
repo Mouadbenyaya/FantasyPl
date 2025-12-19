@@ -74,35 +74,65 @@ ul {
     padding: 0 24px;
 }
 
+/* === TOP BAR === */
+.top-bar {
+    background-color: #f8f8f8;
+    /* Very light grey */
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 0.85rem;
+    display: block;
+    /* Show on all screens */
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: flex-start;
+    /* Left align */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.top-bar a {
+    color: #555;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: color 0.2s;
+}
+
+.top-bar a:hover {
+    color: var(--primary-color);
+}
+
 /* === HEADER === */
 header {
-    background: rgba(56, 0, 60, 0.95);
+    background: #ffffff;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    color: var(--text-light);
-    padding: var(--spacing-sm) 0;
+    color: var(--text-dark);
+    padding: 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-md);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid #f0f0f0;
 }
 
-header .container {
+.main-nav {
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    background: linear-gradient(to right, #00ff87, #60efff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+
+
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 nav ul {
@@ -112,8 +142,8 @@ nav ul {
 }
 
 nav a {
-    color: rgba(255, 255, 255, 0.85);
-    font-weight: 500;
+    color: #38003c;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     transition: var(--transition);
@@ -122,8 +152,8 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    color: var(--accent-color);
-    background-color: rgba(255, 255, 255, 0.05);
+    color: #38003c;
+    background-color: #f0f0f0;
 }
 
 nav a.active::after {
@@ -209,9 +239,7 @@ main {
     box-shadow: 0 20px 40px rgba(56, 0, 60, 0.2);
 }
 
-.p-colorind {
-    color: rgba(255, 255, 255, 0.95);
-}
+
 
 /* === PAGE HEADER === */
 .page-header {
@@ -252,7 +280,6 @@ section {
     padding: var(--spacing-lg);
     background: #fff;
     border-radius: var(--radius-md);
-    /* box-shadow: var(--shadow-sm); removed specifically for article if not needed, or kept subtle */
 }
 
 h2 {
@@ -331,45 +358,7 @@ p {
     transform: scale(1.01);
 }
 
-/* === INFO BOX === */
-.info-box {
-    background-color: #f8f0fc;
-    /* Slightly tinted background */
-    border-left: 5px solid #6a1b9a;
-    padding: 2rem;
-    margin: 2.5rem 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(106, 27, 154, 0.05);
-}
 
-.info-box h4 {
-    margin-top: 0;
-    color: #6a1b9a;
-    font-size: 1.4rem;
-}
-
-.info-box ul {
-    list-style: none;
-    /* Reset to use custom bullets or standard */
-    margin-left: 0;
-    padding-left: 0;
-}
-
-.info-box li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.info-box li::before {
-    content: "•";
-    color: #00ff87;
-    font-weight: bold;
-    font-size: 1.5rem;
-    position: absolute;
-    left: 0;
-    top: -5px;
-}
 
 /* === FEATURES GRID === */
 .features {
@@ -407,7 +396,6 @@ p {
     color: var(--primary-color);
     font-size: 1.5rem;
     border: none;
-    /* Remove previous h3 styling specificities if any */
     padding: 0;
 }
 
@@ -474,7 +462,6 @@ p {
     align-items: center;
     padding: 1rem 2.5rem;
     border-radius: 50px;
-    /* Pill shape */
     font-weight: 600;
     transition: var(--transition);
     cursor: pointer;
@@ -631,10 +618,11 @@ p {
 
 /* === FOOTER === */
 footer {
-    background-color: #0a0a0a;
-    color: rgba(255, 255, 255, 0.7);
+    background-color: #ffffff;
+    /* White background */
+    color: #4a4a4a;
     padding: 4rem 0 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #e5e5e5;
     margin-top: auto;
 }
 
@@ -646,7 +634,7 @@ footer {
 }
 
 .footer-section h4 {
-    color: var(--accent-color);
+    color: #38003c;
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
     text-transform: uppercase;
@@ -655,7 +643,8 @@ footer {
 
 .footer-section p {
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: #555;
+    /* Medium gray text */
     line-height: 1.6;
 }
 
@@ -664,25 +653,25 @@ footer {
 }
 
 .footer-section a {
-    color: rgba(255, 255, 255, 0.6);
+    color: #555;
     transition: var(--transition);
 }
 
 .footer-section a:hover {
-    color: var(--accent-color);
+    color: #38003c;
     padding-left: 5px;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #e5e5e5;
     padding-top: 2rem;
     text-align: center;
 }
 
 .footer-bottom p {
     font-size: 0.85rem;
-    color: var(--accent-color);
-    opacity: 0.5;
+    color: #777;
+    opacity: 1;
 }
 
 /* ==========================================
@@ -763,7 +752,7 @@ footer {
     }
 }
 
-/* === MENU BURGER (CSS ONLY) === */
+/* === MENU BURGER === */
 .menu-toggle {
     display: none;
 }
@@ -777,7 +766,7 @@ footer {
 
 .hamburger span {
     font-size: 2rem;
-    color: var(--text-light);
+    color: #38003c;
     transition: var(--transition);
     display: block;
 }
@@ -799,16 +788,16 @@ footer {
         display: block;
     }
 
-    /* Hide Menu by Default on Mobile */
     nav {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(56, 0, 60, 0.98);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        background: #ffffff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         z-index: 999;
+        border-top: 1px solid #eee;
     }
 
     nav ul {
@@ -816,18 +805,15 @@ footer {
         flex-direction: column;
         width: 100%;
         text-align: center;
-        padding: 1rem 0;
+        padding: 0;
         margin: 0;
-        /* Reset default margin */
     }
 
-    /* Show Menu When Checkbox is Checked */
     #menu-toggle:checked~nav {
         display: block;
         animation: slideDown 0.3s ease forwards;
     }
 
-    /* Animation Keyframes */
     @keyframes slideDown {
         from {
             opacity: 0;
@@ -847,7 +833,8 @@ footer {
     nav a {
         display: block;
         padding: 1rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid #f0f0f0;
+        color: #38003c;
     }
 }
 
@@ -928,7 +915,6 @@ footer {
     }
 }
 
-/* Focus styles pour l'accessibilité */
 a:focus,
 button:focus,
 input:focus,
@@ -1004,7 +990,6 @@ textarea:focus {
     color: #38003c;
     margin-bottom: 1.5rem;
     text-align: left;
-    /* Center or Left depending on design, User prefers 'best practice' -> Left often better for readability in flow */
 }
 
 .chips-grid {
@@ -1060,45 +1045,4 @@ textarea:focus {
 
 .chip-card:nth-child(4) {
     border-top-color: #04f5ff;
-}
-
-
-/* === VIDEO PAGE LAYOUT === */
-.video-layout {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-}
-
-.layout-text {
-    flex: 1;
-}
-
-.layout-video {
-    flex: 0 0 300px;
-    position: sticky;
-    top: 100px;
-}
-
-.layout-video iframe {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 992px) {
-    .video-layout {
-        flex-direction: column;
-    }
-
-    .layout-video {
-        flex: auto;
-        width: 100%;
-        position: static;
-        margin-top: 2rem;
-    }
-
-    .layout-video iframe {
-        height: 300px;
-    }
 }

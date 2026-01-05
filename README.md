@@ -1,4 +1,4 @@
-# Fantasy Premier League Showcase Website
+# Fantasy Premier League Showcase Website https://mouadbenyaya.github.io/FantasyPl/
 
 Ce projet est un site vitrine statique dédié à la Fantasy Premier League, conçu pour présenter des stratégies, des analyses de joueurs et fournir des conseils aux utilisateurs. Le site est construit en utilisant uniquement HTML5 et CSS3, sans aucune dépendance JavaScript pour l'interactivité, garantissant ainsi performance et légèreté.
 
